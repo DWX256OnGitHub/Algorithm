@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main(){
+	int N;
+	scanf("%d",&N);
+	int list[N];
+	for(int i=0;i<N;i++){
+		scanf("%d",&list[i]);
+	}
+	int maxSubSeq = 0;
+	int thisSubSeq = 0;
+	for(int i=0;i<N;i++){
+		thisSubSeq += list[i];
+		if(thisSubSeq > maxSubSeq){
+			maxSubSeq = thisSubSeq;
+		}
+		else if(thisSubSeq < 0){
+			thisSubSeq = 0;
+		}
+	}
+	printf("%d",maxSubSeq);
+	return 0;
+}
